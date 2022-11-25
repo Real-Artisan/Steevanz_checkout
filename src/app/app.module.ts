@@ -7,6 +7,13 @@ import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { SubscribeComponent } from './Components/subscribe/subscribe.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { CheckoutBarComponent } from './Components/checkout-bar/checkout-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +21,16 @@ import { CartComponent } from './Components/cart/cart.component';
     NavBarComponent,
     FooterComponent,
     SubscribeComponent,
-    CartComponent
+    CartComponent,
+    CheckoutBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

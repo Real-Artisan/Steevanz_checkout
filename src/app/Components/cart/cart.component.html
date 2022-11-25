@@ -1,1 +1,56 @@
-<p>cart works!</p>
+<div class="page-container">
+    <app-nav-bar></app-nav-bar>
+    <app-checkout-bar></app-checkout-bar>
+    <div class="page">
+      <div class="back">
+        <span class="material-symbols-outlined">
+        arrow_back_ios
+        </span>
+        <span>Continue Shopping</span>
+      </div> 
+      <div class="current">
+        <div class="one"><span>1</span></div>
+        <div class="current-page">
+          Check your cart
+        </div>
+      </div> 
+      <div class="text-and-stuff">
+        <div class="product">
+          <div class="name">
+            <h2>FRONTEND DEVELOPER</h2>
+            <div class="delete"><span class="material-symbols-outlined">
+              delete
+              </span>
+            </div>
+          </div>
+          <p>One position available every month.</p>
+          <img src="../../../assets/pngs/undraw_add_tasks_re_s5yj.svg" alt="">
+        </div>
+        <div class="coupon">
+          <div class="coupon-content">
+            <p>Do you have a discount coupon?</p>
+            <p>
+              <mat-form-field id="specific-background" appearance="fill">
+                <mat-label>Write your coupon here</mat-label>
+                <input matInput>
+                <mat-icon matSuffix>cached</mat-icon>
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="price-bar">
+        <div class="price">
+          <div class="euros"><b>Total: 50€</b><span> per month.</span></div>
+          
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="clear">CLEAN CART</button>
+      <button class="next">NEXT</button>
+    </div>
+    </div>
+    <app-footer></app-footer>
+</div>
