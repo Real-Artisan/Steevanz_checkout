@@ -1,3 +1,4 @@
+<div class="page-container">
 <app-nav-bar></app-nav-bar>
 <app-checkout-bar></app-checkout-bar>
 <div class="price-bar">
@@ -19,15 +20,133 @@
 <div class="forms">
     <form>
         <div class="left">
+            <div class="small-fields">
+                <div class="firstname">
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Firstname(s)</mat-label>
+                          <input matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Email</mat-label>
+                          <input matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p class="short-field">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Country</mat-label>
+                            <mat-select>
+                              <mat-option value="one">First option</mat-option>
+                              <mat-option value="two">Second option</mat-option>
+                            </mat-select>
+                         </mat-form-field>
+                    </p>
+                </div>
+                <div class="lastname">
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Lastname(s)</mat-label>
+                          <input matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Phone</mat-label>
+                          <input matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Location</mat-label>
+                          <input matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                </div>
+            </div>
+            <div class="long-field">
+                <p class="long">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Address</mat-label>
+                          <input matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                </p>
+                <p class="long">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Delivery Address</mat-label>
+                          <input matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                </p>
+               
+            </div>
+            <div class="short-fields">
+                <div class="post">
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Postal code</mat-label>
+                          <input matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                </div>
+                <div class="vat">
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>VAT number</mat-label>
+                          <input matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                </div>
+            </div>
 
+            <div class="radio">
+                Add delivery address different from the billing address.
+            </div>
         </div>
         <div class="right">
-
+            <div class="gift-box">
+                <img src="../../../assets/pngs/Group 100.png" alt="">
+            </div>
+            <div class="little-fields">
+                <p class="short-field from">
+                    <mat-form-field appearance="fill" >
+                      <mat-label>From</mat-label>
+                      <input matInput>
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+                </p>
+                <p class="short-field">
+                    <mat-form-field appearance="fill" >
+                      <mat-label>To</mat-label>
+                      <input matInput>
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+                </p>
+            </div>
+            <div class="long-one">
+                <p class="short-field">
+                    <mat-form-field appearance="fill" >
+                      <mat-label>Message</mat-label>
+                      <textarea matInput placeholder="Write your message here" ></textarea>
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+                </p>
+            </div>
         </div>
     </form>
 </div>
 <div class="second-buttons">
-    <button class="previous">PREVIOUS</button>
+    <button routerLink="/shop/checkout/cart" class="previous">PREVIOUS</button>
     <button class="next">NEXT</button>
 </div>
 <app-footer></app-footer>
+</div>

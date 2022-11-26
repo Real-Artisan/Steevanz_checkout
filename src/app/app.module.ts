@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { PersonalInfoComponent } from './Components/personal-info/personal-info.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -32,7 +33,8 @@ import { PersonalInfoComponent } from './Components/personal-info/personal-info.
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

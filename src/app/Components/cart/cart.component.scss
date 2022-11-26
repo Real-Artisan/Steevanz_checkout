@@ -1,8 +1,6 @@
- .mat-form-field-appearance-fill .mat-form-field-flex {
-    background-color: #000;
-  }
+
 .page-container {
-    height: 100vh;
+    height: 100%;
    
     .page {
         .back{
@@ -11,7 +9,7 @@
             font-family: 'Roboto', serif;
             font-size: 20px;
             margin-left: 30px;
-            margin-top: 30px;
+            margin-top: 50px;
             cursor: pointer;
             .material-symbols-outlined {
                 font-size: 20px;
@@ -20,7 +18,7 @@
         .current {
             display: flex;
             margin-left: 30px;
-            margin-top: 30px;
+            margin-top: 50px;
             .one {
                 display: grid;
                 place-content: center;
@@ -38,7 +36,7 @@
             display: flex;
             justify-content: space-evenly;
             width: 100%;
-            margin-top: 30px;
+            margin-top: 60px;
             .product {
                 margin-left: 30px;
                 margin-top: 30px;
@@ -73,14 +71,14 @@
                 img {
                     width: 250px;
                     margin-left: 30px;
-                    margin-top: 33px;
+                    margin-top: 43px;
                 }
             }
             .coupon {
                 width: 50%;
                 .coupon-content {
                     padding-top: 15px;
-                    margin-left: 40%;
+                    margin-left: 45%;
                     p {
                         font-size: 24px;
                     }
@@ -150,5 +148,6 @@
             }
         }
     }
+    
 }
 
