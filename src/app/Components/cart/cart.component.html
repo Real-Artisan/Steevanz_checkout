@@ -29,8 +29,8 @@
         <div class="coupon">
           <div class="coupon-content">
             <p>Do you have a discount coupon?</p>
-            <p>
-              <mat-form-field id="specific-background" appearance="fill">
+            <p id="coupon-field">
+              <mat-form-field appearance="fill" >
                 <mat-label>Write your coupon here</mat-label>
                 <input matInput>
                 <mat-icon matSuffix>cached</mat-icon>
@@ -45,11 +45,11 @@
         <div class="price">
           <div class="euros"><b>Total: 50€</b><span> per month.</span></div>
           
-      </div>
+        </div>
     </div>
     <div class="buttons">
       <button class="clear">CLEAN CART</button>
-      <button class="next">NEXT</button>
+      <button routerLink="/shop/checkout/personal-info" class="next">NEXT</button>
     </div>
     </div>
     <app-footer></app-footer>

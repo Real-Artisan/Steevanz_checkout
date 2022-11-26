@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import { PersonalInfoComponent } from './Components/personal-info/personal-info.component';
 
 
 
@@ -22,7 +23,8 @@ import {MatIconModule} from '@angular/material/icon';
     FooterComponent,
     SubscribeComponent,
     CartComponent,
-    CheckoutBarComponent
+    CheckoutBarComponent,
+    PersonalInfoComponent
   ],
   imports: [
     BrowserModule,

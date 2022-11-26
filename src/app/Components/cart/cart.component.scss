@@ -1,11 +1,9 @@
+ .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #000;
+  }
 .page-container {
     height: 100vh;
-    app-footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
+   
     .page {
         .back{
             display: flex;
@@ -86,10 +84,15 @@
                     p {
                         font-size: 24px;
                     }
-                    p {
-                        mat-form-field {
-                                width: 440px;
+                    #coupon-field {
+                        *{
+                            background-color: #fff;
                         }
+                        mat-form-field {
+                            width: 440px;
+                                
+                        }
+                        
                     }
                 }
             }

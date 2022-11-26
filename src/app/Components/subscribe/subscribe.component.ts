@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 export class SubscribeComponent {
   constructor( private router: Router) {}
 goToCheckout() {
-  this.router.navigate(['shop/cart'])
+  this.router.navigate(['shop/checkout/cart'])
 }
 }
