@@ -1,0 +1,68 @@
+<div class="page-container">
+    <app-nav-bar></app-nav-bar>
+    <app-checkout-bar></app-checkout-bar>
+    <div class="price-bar">
+        <div class="price">
+            <div class="euros"><b>Total: 31.98€</b><span>26.99€(Product) + 4.99€ (Delivery Fee)</span></div>
+        </div>
+    </div>
+    <div class="current">
+        <div class="two"><span>3</span></div>
+        <div class="current-page">
+          Payment
+        </div>
+    </div>
+    <div class="payment-info">
+        <div class="left">
+            <div class="png">
+                <img src="../../../assets/pngs/Group 105.png" alt="">
+                <div class="pay">Pay securely with your credit card.</div>
+            </div>
+            <form>
+                <div class="long-one">
+                    <p class="long">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Credit Card</mat-label>
+                          <input matInput required>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                </div>
+                <div class="short-ones">
+                    <p class="short">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Expiration Date</mat-label>
+                          <input placeholder="MM/YY" matInput required>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p class="short">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>CVC</mat-label>
+                          <input matInput  required>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                </div>
+            </form>
+            <div class="radio">
+                I have read and accept the terms and conditions
+            </div>
+        </div>
+        <div class="right">
+            <div class="resume">
+                <div class="name">Resume</div>
+                <div class="drop">
+                    <mat-icon class="material-icons-outlined">
+                        arrow_drop_down
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second-buttons">
+        <button routerLink="/shop/checkout/personal-info" class="previous">PREVIOUS</button>
+        <button routerLink="/shop/checkout/payment/success" class="next">CHECKOUT</button>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -14,6 +14,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { PersonalInfoComponent } from './Components/personal-info/personal-info.component';
 import {MatSelectModule} from '@angular/material/select';
+import { PaymentComponent } from './Components/payment/payment.component';
+import { PaymentSuccessComponent } from './Components/payment-success/payment-success.component';
 
 
 
@@ -25,7 +27,9 @@ import {MatSelectModule} from '@angular/material/select';
     SubscribeComponent,
     CartComponent,
     CheckoutBarComponent,
-    PersonalInfoComponent
+    PersonalInfoComponent,
+    PaymentComponent,
+    PaymentSuccessComponent
   ],
   imports: [
     BrowserModule,
