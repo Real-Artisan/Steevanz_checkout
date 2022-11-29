@@ -29,14 +29,16 @@
         <div class="coupon">
           <div class="coupon-content">
             <p>Do you have a discount coupon?</p>
-            <p id="coupon-field">
-              <mat-form-field appearance="fill" >
-                <mat-label>Write your coupon here</mat-label>
-                <input matInput>
-                <mat-icon matSuffix>cached</mat-icon>
-                <!-- <mat-hint>Hint</mat-hint> -->
-              </mat-form-field>
-            </p>
+            <form [formGroup]="coupon" >
+              <p id="coupon-field">
+                <mat-form-field appearance="fill" >
+                  <mat-label>Write your coupon here</mat-label>
+                  <input formControlName="couponCode" matInput>
+                  <mat-icon matSuffix>cached</mat-icon>
+                  <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+              </p>
+            </form>
           </div>
 
         </div>

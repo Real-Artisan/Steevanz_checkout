@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StepperService } from 'src/app/Services/stepper.service';
 
@@ -9,11 +10,27 @@ import { StepperService } from 'src/app/Services/stepper.service';
   encapsulation: ViewEncapsulation.None
 })
 export class PersonalInfoComponent {
+  personalInfo!: FormGroup;
   activeRoute: boolean = false;
-  constructor( private step: StepperService, private router: Router) {
+  checked: boolean = false;
+  constructor( private step: StepperService, private router: Router, private formbuilder: FormBuilder) {
     const route = this.router.routerState.snapshot.url;
     this.step.checkRoute(route);
-    console.log('perinf')
+    this.personalInfo = this.formbuilder.group({
+      firstName: ['', Validators.compose([Validators.required])],
+      lastName: ['', Validators.compose([Validators.required])],
+      email: ['', Validators.compose([Validators.required])],
+      phone: ['', Validators.compose([Validators.required,])],
+      country: ['', Validators.compose([Validators.required])],
+      location: ['', Validators.compose([Validators.required])],
+      address: ['', Validators.compose([Validators.required])],
+      delivery: ['',],
+      postal: ['', Validators.compose([Validators.required])],
+      vat: ['', Validators.compose([Validators.required])],
+      from: ['', ],
+      to: ['', ],
+      message: ['',],
+    })
   }
   front() {
     this.router.navigate(['/shop/checkout/payment']);

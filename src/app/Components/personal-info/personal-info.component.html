@@ -18,30 +18,29 @@
     <button class="company">COMPANY</button>
 </div> 
 <div class="forms">
-    <form>
+    <form [formGroup]="personalInfo" >
         <div class="left">
             <div class="small-fields">
                 <div class="firstname">
                     <p class="short-field">
                         <mat-form-field appearance="fill" >
                           <mat-label>Firstname(s)</mat-label>
-                          <input matInput>
+                          <input formControlName="firstName" required matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
                     <p class="short-field">
                         <mat-form-field appearance="fill" >
                           <mat-label>Email</mat-label>
-                          <input matInput>
+                          <input formControlName="email" required matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
                     <p class="short-field">
                         <mat-form-field appearance="fill">
                             <mat-label>Country</mat-label>
-                            <mat-select>
+                            <mat-select formControlName="country" required>
                               <mat-option value="one">First option</mat-option>
-                              <mat-option value="two">Second option</mat-option>
                             </mat-select>
                          </mat-form-field>
                     </p>
@@ -50,21 +49,21 @@
                     <p class="short-field">
                         <mat-form-field appearance="fill" >
                           <mat-label>Lastname(s)</mat-label>
-                          <input matInput>
+                          <input formControlName="lastName" required matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
                     <p class="short-field">
                         <mat-form-field appearance="fill" >
                           <mat-label>Phone</mat-label>
-                          <input matInput>
+                          <input formControlName="phone" required matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
                     <p class="short-field">
                         <mat-form-field appearance="fill" >
                           <mat-label>Location</mat-label>
-                          <input matInput>
+                          <input formControlName="location" required matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
@@ -74,14 +73,14 @@
                 <p class="long">
                         <mat-form-field appearance="fill" >
                           <mat-label>Address</mat-label>
-                          <input matInput>
+                          <input formControlName="address" required matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                 </p>
-                <p class="long">
+                <p *ngIf="checked" class="long">
                         <mat-form-field appearance="fill" >
                           <mat-label>Delivery Address</mat-label>
-                          <input matInput>
+                          <input formControlName="delivery" matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                 </p>
@@ -92,7 +91,7 @@
                     <p class="short-field">
                         <mat-form-field appearance="fill" >
                           <mat-label>Postal code</mat-label>
-                          <input matInput>
+                          <input formControlName="postal" required matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
@@ -101,33 +100,37 @@
                     <p class="short-field">
                         <mat-form-field appearance="fill" >
                           <mat-label>VAT number</mat-label>
-                          <input matInput>
+                          <input formControlName="vat" required matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
                 </div>
             </div>
 
-            <div class="radio">
-                Add delivery address different from the billing address.
-            </div>
+            <label class="radio">
+                <mat-radio-button color="primary" (change)="checked = !checked">Add delivery address different from the billing address.</mat-radio-button>
+            </label>
         </div>
         <div class="right">
             <div class="gift-box">
                 <img src="../../../assets/pngs/Group 100.png" alt="">
+                <div class="offer">
+                    <div class="question">Is this purchase an offer?</div>
+                    <div class="sugg">Add a custom message</div>
+                </div>
             </div>
             <div class="little-fields">
                 <p class="short-field from">
                     <mat-form-field appearance="fill" >
-                      <mat-label>From</mat-label>
-                      <input matInput>
+                      <mat-label>From<sup>*</sup></mat-label>
+                      <input formControlName="from" matInput>
                       <!-- <mat-hint>Hint</mat-hint> -->
                     </mat-form-field>
                 </p>
                 <p class="short-field">
                     <mat-form-field appearance="fill" >
-                      <mat-label>To</mat-label>
-                      <input matInput>
+                      <mat-label>To<sup>*</sup> </mat-label>
+                      <input formControlName="to" matInput>
                       <!-- <mat-hint>Hint</mat-hint> -->
                     </mat-form-field>
                 </p>
@@ -136,7 +139,7 @@
                 <p class="short-field">
                     <mat-form-field appearance="fill" >
                       <mat-label>Message</mat-label>
-                      <textarea matInput placeholder="Write your message here" ></textarea>
+                      <textarea formControlName="message" matInput placeholder="Write your message here" ></textarea>
                       <!-- <mat-hint>Hint</mat-hint> -->
                     </mat-form-field>
                 </p>
@@ -146,7 +149,7 @@
 </div>
 <div class="second-buttons">
     <button (click)="back()" class="previous">PREVIOUS</button>
-    <button (click)="front()" class="next">NEXT</button>
+    <button (click)="front()" [disabled]="!personalInfo.valid" class="next">NEXT</button>
 </div>
 <app-footer></app-footer>
 </div>

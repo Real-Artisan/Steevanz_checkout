@@ -82,15 +82,17 @@
                     p {
                         font-size: 24px;
                     }
-                    #coupon-field {
-                        *{
-                            background-color: #fff;
+                    form {
+                        #coupon-field {
+                            *{
+                                background-color: #fff;
+                            }
+                            mat-form-field {
+                                width: 440px;
+                                    
+                            }
+                            
                         }
-                        mat-form-field {
-                            width: 440px;
-                                
-                        }
-                        
                     }
                 }
             }

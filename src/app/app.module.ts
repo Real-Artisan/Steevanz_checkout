@@ -18,6 +18,9 @@ import { PaymentComponent } from './Components/payment/payment.component';
 import { PaymentSuccessComponent } from './Components/payment-success/payment-success.component';
 import { StepperService } from './Services/stepper.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataService } from './Services/data.service';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 
@@ -42,9 +45,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatRadioModule
   ],
-  providers: [StepperService],
+  providers: [StepperService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
