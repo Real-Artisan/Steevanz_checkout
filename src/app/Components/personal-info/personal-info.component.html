@@ -18,7 +18,7 @@
     <button class="company">COMPANY</button>
 </div> 
 <div class="forms">
-    <form [formGroup]="personalInfo" >
+    <form *ngIf="!plural" [formGroup]="personalInfo" >
         <div class="left">
             <div class="small-fields">
                 <div class="firstname">
@@ -57,6 +57,134 @@
                         <mat-form-field appearance="fill" >
                           <mat-label>Phone</mat-label>
                           <input formControlName="phone" required matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Location</mat-label>
+                          <input formControlName="location" required matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                </div>
+            </div>
+            <div class="long-field">
+                <p class="long">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Address</mat-label>
+                          <input formControlName="address" required matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                </p>
+                <p *ngIf="checked" class="long">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Delivery Address</mat-label>
+                          <input formControlName="delivery" matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                </p>
+               
+            </div>
+            <div class="short-fields">
+                <div class="post">
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Postal code</mat-label>
+                          <input formControlName="postal" required matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                </div>
+                <div class="vat">
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>VAT number</mat-label>
+                          <input formControlName="vat" required matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                </div>
+            </div>
+
+            <label class="radio">
+                <mat-radio-button color="primary" (change)="checked = !checked">Add delivery address different from the billing address.</mat-radio-button>
+            </label>
+        </div>
+        <div class="right">
+            <div class="gift-box">
+                <img src="../../../assets/pngs/Group 100.png" alt="">
+                <div class="offer">
+                    <div class="question">Is this purchase an offer?</div>
+                    <div class="sugg">Add a custom message</div>
+                </div>
+            </div>
+            <div class="little-fields">
+                <p class="short-field from">
+                    <mat-form-field appearance="fill" >
+                      <mat-label>From<sup>*</sup></mat-label>
+                      <input formControlName="from" matInput>
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+                </p>
+                <p class="short-field">
+                    <mat-form-field appearance="fill" >
+                      <mat-label>To<sup>*</sup> </mat-label>
+                      <input formControlName="to" matInput>
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+                </p>
+            </div>
+            <div class="long-one">
+                <p class="short-field">
+                    <mat-form-field appearance="fill" >
+                      <mat-label>Message</mat-label>
+                      <textarea formControlName="message" matInput placeholder="Write your message here" ></textarea>
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+                </p>
+            </div>
+        </div>
+    </form>
+    <form *ngIf="plural" [formGroup]="companyInfo" >
+        <div class="left">
+            <div class="small-fields">
+                <div class="firstname">
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Company Name</mat-label>
+                          <input formControlName="companyName" required matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Work Email</mat-label>
+                          <input formControlName="workEmail" required matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p class="short-field">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Country</mat-label>
+                            <mat-select formControlName="country" required>
+                              <mat-option value="one">First option</mat-option>
+                            </mat-select>
+                         </mat-form-field>
+                    </p>
+                </div>
+                <div class="lastname">
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Employee Name(s)</mat-label>
+                          <input formControlName="employeeName" required matInput>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p class="short-field">
+                        <mat-form-field appearance="fill" >
+                          <mat-label>Role in Organisation</mat-label>
+                          <input formControlName="role" required matInput>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
