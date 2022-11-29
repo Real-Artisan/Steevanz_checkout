@@ -14,8 +14,8 @@
     </div>
 </div>
 <div class="first-buttons">
-    <button class="personal">PERSONAL</button>
-    <button class="company">COMPANY</button>
+    <button [ngClass]="{'personal': !plural, 'company': plural}" (click)="plural = !plural">PERSONAL</button>
+    <button [ngClass]="{'personal': plural, 'company': !plural}" (click)="plural = !plural">COMPANY</button>
 </div> 
 <div class="forms">
     <form *ngIf="!plural" [formGroup]="personalInfo" >
@@ -40,7 +40,7 @@
                         <mat-form-field appearance="fill">
                             <mat-label>Country</mat-label>
                             <mat-select formControlName="country" required>
-                              <mat-option value="one">First option</mat-option>
+                              <mat-option *ngFor="let country of countries" value="one">{{country.name.common}}</mat-option>
                             </mat-select>
                          </mat-form-field>
                     </p>
@@ -168,7 +168,7 @@
                         <mat-form-field appearance="fill">
                             <mat-label>Country</mat-label>
                             <mat-select formControlName="country" required>
-                              <mat-option value="one">First option</mat-option>
+                                <mat-option *ngFor="let country of countries" value="one">{{country.name.common}}</mat-option>
                             </mat-select>
                          </mat-form-field>
                     </p>
@@ -277,7 +277,7 @@
 </div>
 <div class="second-buttons">
     <button (click)="back()" class="previous">PREVIOUS</button>
-    <button (click)="front()" [disabled]="!personalInfo.valid" class="next">NEXT</button>
+    <button (click)="front()" [disabled]="!(personalInfo.valid || companyInfo.valid)" class="next">NEXT</button>
 </div>
 <app-footer></app-footer>
 </div>

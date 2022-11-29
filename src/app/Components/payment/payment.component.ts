@@ -9,7 +9,7 @@ import { StepperService } from 'src/app/Services/stepper.service';
   encapsulation: ViewEncapsulation.None
 })
 export class PaymentComponent {
-  activeRoute:boolean = false;
+  checked:boolean = false;
   constructor( private step: StepperService, private router: Router) {
     const route = this.router.routerState.snapshot.url;
     this.step.checkRoute(route);

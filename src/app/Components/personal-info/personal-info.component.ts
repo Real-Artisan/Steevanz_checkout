@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/Services/data.service';
 import { StepperService } from 'src/app/Services/stepper.service';
 
 @Component({
@@ -15,9 +16,13 @@ export class PersonalInfoComponent {
   activeRoute: boolean = false;
   checked: boolean = false;
   plural: boolean = false;
-  constructor( private step: StepperService, private router: Router, private formbuilder: FormBuilder) {
+  countries: any = [];
+  constructor( private step: StepperService, private router: Router, private formbuilder: FormBuilder, private data: DataService) {
     const route = this.router.routerState.snapshot.url;
     this.step.checkRoute(route);
+    this.data.getCountries().subscribe((result) => {
+      this.countries = result.sort((a: { name: { common: number; }; }, b: { name: { common: number; }; }) => (a.name.common > b.name.common)? 1 : -1)
+    })
     this.personalInfo = this.formbuilder.group({
       firstName: ['', Validators.compose([Validators.required])],
       lastName: ['', Validators.compose([Validators.required])],
