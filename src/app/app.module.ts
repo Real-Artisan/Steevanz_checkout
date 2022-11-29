@@ -16,6 +16,8 @@ import { PersonalInfoComponent } from './Components/personal-info/personal-info.
 import {MatSelectModule} from '@angular/material/select';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { PaymentSuccessComponent } from './Components/payment-success/payment-success.component';
+import { StepperService } from './Services/stepper.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -38,9 +40,11 @@ import { PaymentSuccessComponent } from './Components/payment-success/payment-su
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [StepperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

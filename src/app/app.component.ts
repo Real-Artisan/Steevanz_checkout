@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StepperService } from './Services/stepper.service';
 
 @Component({
   selector: 'app-root',
