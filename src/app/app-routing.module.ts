@@ -8,11 +8,19 @@ import { SubscribeComponent } from './Components/subscribe/subscribe.component';
 
 const routes: Routes = 
 [
-  { path: '', component: SubscribeComponent },
-  { path: 'shop/checkout/cart', component: CartComponent},
-  { path: 'shop/checkout/personal-info', component: PersonalInfoComponent},
-  { path: 'shop/checkout/payment', component: PaymentComponent},
-  { path: 'shop/checkout/payment/success', component: PaymentSuccessComponent},
+  {
+    path: '', children: [
+      { path: '', component: SubscribeComponent, data: { animation: 'One'} },
+      { path: 'shop/checkout/cart', component: CartComponent, data: { animation: 'Two' }},
+      { path: 'shop/checkout/personal-info', component: PersonalInfoComponent, data: { animation: 'Three' }},
+      { path: 'shop/checkout/payment', component: PaymentComponent, data: { animation: 'Four' }},
+      { path: 'shop/checkout/payment/success', component: PaymentSuccessComponent, data: { animation: 'Five' }},
+      {
+        path: '**',
+        redirectTo: ''
+       }
+    ]
+  }
 ];
 
 @NgModule({

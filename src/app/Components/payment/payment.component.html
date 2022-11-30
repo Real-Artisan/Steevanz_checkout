@@ -18,12 +18,12 @@
                 <img src="../../../assets/pngs/Group 105.png" alt="">
                 <div class="pay">Pay securely with your credit card.</div>
             </div>
-            <form>
+            <form [formGroup]="cardDetails" >
                 <div class="long-one">
                     <p class="long">
                         <mat-form-field appearance="fill" >
                           <mat-label>Credit Card</mat-label>
-                          <input matInput required>
+                          <input formControlName="number" matInput required>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
@@ -32,21 +32,21 @@
                     <p class="short">
                         <mat-form-field appearance="fill" >
                           <mat-label>Expiration Date</mat-label>
-                          <input placeholder="MM/YY" matInput required>
+                          <input formControlName="expiry" placeholder="MM/YY" matInput required>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
                     <p class="short">
                         <mat-form-field appearance="fill" >
                           <mat-label>CVC</mat-label>
-                          <input matInput  required>
+                          <input formControlName="cvc" matInput required>
                           <!-- <mat-hint>Hint</mat-hint> -->
                         </mat-form-field>
                     </p>
                 </div>
             </form>
             <label class="radio">
-                <mat-radio-button color="primary" (change)="checked = !checked">Add delivery address different from the billing address.</mat-radio-button>
+                <mat-radio-button color="primary" (change)="checked = !checked">I have read and accept the stores terms and conditions<sup>*</sup> .</mat-radio-button>
             </label>
         </div>
         <div class="right">
@@ -62,7 +62,7 @@
     </div>
     <div class="second-buttons">
         <button routerLink="/shop/checkout/personal-info" class="previous">PREVIOUS</button>
-        <button routerLink="/shop/checkout/payment/success" class="next">CHECKOUT</button>
+        <button [disabled]="!(cardDetails.valid && checked)" routerLink="/shop/checkout/payment/success" class="next">CHECKOUT</button>
     </div>
 </div>
 <app-footer></app-footer>

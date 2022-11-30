@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataService } from './Services/data.service';
 import {MatRadioModule} from '@angular/material/radio';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -49,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatRadioModule,
     HttpClientModule,
+    RouterModule
   ],
   providers: [StepperService, DataService],
   bootstrap: [AppComponent]

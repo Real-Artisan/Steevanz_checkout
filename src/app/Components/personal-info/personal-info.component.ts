@@ -37,7 +37,7 @@ export class PersonalInfoComponent {
       from: ['', ],
       to: ['', ],
       message: ['',],
-    })
+    });
     this.companyInfo = this.formbuilder.group({
       companyName: ['', Validators.compose([Validators.required])],
       employeeName: ['', Validators.compose([Validators.required])],
@@ -52,7 +52,7 @@ export class PersonalInfoComponent {
       from: ['', ],
       to: ['', ],
       message: ['',],
-    })
+    });
   }
   front() {
     this.router.navigate(['/shop/checkout/payment']);
