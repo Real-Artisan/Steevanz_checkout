@@ -307,3 +307,256 @@
         grid-area: footer;
     }
 }
+@media only screen and (max-width: 950px) {
+
+}
+@media only screen and (max-width: 1173px) {
+    .page-container {
+        *{
+            max-width: 100vw;
+        }
+    }
+}
+@media only screen and (max-width: 1563px) {
+    .page-container {
+        .forms {
+            form {
+                .long-field {
+                    position: relative;
+                    p {
+                        position: absolute;
+                        left: 30px;
+                        margin-top: 45px;
+                        * {
+                            box-shadow: none;
+                        }
+                        input {
+                            width: 800px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+@media only screen and (max-width: 1500px) {
+    .page-container {
+
+        
+        max-width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.05fr .05fr .05fr .05fr .05fr .1fr .05fr .1fr;
+        grid-template-areas: 
+        "nav"
+        "checkout"
+        "price"
+        "current"
+        "switch"
+        "form"
+        "buttons"
+        "footer";
+        app-nav-bar {
+            grid-area: nav;
+        }
+        app-checkout-bar {
+            grid-area: checkout;
+        }
+        .price-bar {
+            grid-area: price;
+        }
+        .current{
+            grid-area: current;
+        }
+        .first-buttons {
+            grid-area: switch;
+        }
+  
+
+        .forms {
+            form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 0.8fr 0.2fr 0.2fr 0.2fr 0.5fr;
+                grid-template-areas: 
+                "firstname lastname"
+                "address address"
+                "postal vat"
+                "radio radio"
+                "gift gift";
+                .firstname {
+                    position: relative;
+                    margin-left: 70px;
+                }
+                .lastname {
+                    position: relative;
+                }
+                .long-field{
+                    margin-left: 44px;
+                    p {
+                        input {
+                            width: 980px;
+                        }
+                    }
+                }
+                .post {
+                    margin-left: 40px;
+                }
+                .radio {
+                    margin-left: 70px;
+                }
+                .right {
+                    margin-left: 70px;
+                    .gift-box{
+                        .offer {
+                            top: 935px;
+                        }
+                    }
+                }
+            }
+        }
+        .second-buttons {
+            grid-area: buttons;
+        }
+        app-footer {
+            grid-area: footer;
+        }
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .page-container {
+        .forms {
+            form {
+                .long-field {
+                    position: relative;
+                    p {
+                        position: absolute;
+                        left: 30px;
+                        margin-top: 45px;
+                        * {
+                            box-shadow: none;
+                        }
+                        input {
+                            width: 700px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+@media only screen and (max-width: 911px) {
+    .page-container {
+
+        max-width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.05fr .05fr .05fr .05fr .05fr .1fr .05fr .1fr;
+        grid-template-areas: 
+        "nav"
+        "checkout"
+        "price"
+        "current"
+        "switch"
+        "form"
+        "buttons"
+        "footer";
+        app-nav-bar {
+            grid-area: nav;
+        }
+        app-checkout-bar {
+            grid-area: checkout;
+        }
+        .price-bar {
+            grid-area: price;
+        }
+        .current{
+            grid-area: current;
+        }
+        .first-buttons {
+            grid-area: switch;
+        }
+        .forms {
+            grid-area: form;
+           form {
+            grid-template-columns: 1fr;
+            grid-template-rows: .05fr .05fr .05fr .05fr .05fr .05fr .05fr;
+            grid-template-areas: 
+            "firstname"
+            "lastname"
+            "address"
+            "postal"
+            "vat"   
+            "radio"
+            "gift" ;
+            *{
+                max-width: 80vw;
+            }
+            .firstname {
+                grid-area: firstname;
+
+            }
+            .lastname {
+                grid-area: lastname;
+            }
+            .long-field {
+                grid-area: address;
+            }
+            .post {
+                grid-area: postal;
+            }
+            .vat {
+                grid-area: vat;
+            }
+            .radio {
+                grid-area: radio;
+            }
+            .right {
+                grid-area: gift;
+                .gift-box {
+                    margin-top: 40px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    position: relative;
+                    img {
+                        width: 476px;
+                    }
+                    .offer {
+                        position: absolute;
+                        top: 10px;
+                        .question {
+                            font-family: 'Roboto', serif;
+                            font-size: 18px;
+                        }
+                        .sugg {
+                            font-family: 'Roboto', serif;
+                            font-size: 10px;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+
+            }
+             
+           } 
+        }
+        .second-buttons {
+            grid-area: buttons;
+        }
+        app-footer {
+            grid-area: footer;
+        }
+    }
+}
