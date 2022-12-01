@@ -26,6 +26,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputMaskModule} from 'primeng/inputmask';
 
 
 
@@ -58,7 +59,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     InputTextModule,
     DropdownModule,
     InputTextareaModule,
-    RadioButtonModule
+    RadioButtonModule,
+    InputMaskModule
   
   ],
   providers: [StepperService, DataService],

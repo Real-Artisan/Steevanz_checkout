@@ -147,3 +147,46 @@
         }
     }
 }
+@media  only screen and (max-width:747px) {
+.page-container {
+    .price-bar {
+        width: 100%;
+        background-color: #e9e9e9;
+        height: 68px;
+        .price {
+            padding-top: 30px;
+            margin-left: 30px;
+            .euros {
+                b {
+                    font-size: 14px;
+                }
+                span {
+                    font-size: 14px;
+                    margin-left: 25px;
+                }
+            }
+        }
+    }
+    .payment-info {
+        flex-direction: column-reverse;
+        .left {
+            form {
+                .long-one{
+                    p {
+                        input {
+                            width: 324px;
+                        }
+                    }
+                }
+                .short-ones {
+                    p {
+                        input {
+                            width: 166px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
