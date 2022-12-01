@@ -1,0 +1,149 @@
+.page-container {
+    min-height: 100%;
+    .price-bar {
+        width: 100%;
+        background-color: #e9e9e9;
+        height: 68px;
+        .price {
+            padding-top: 30px;
+            margin-left: 30px;
+            .euros {
+                b {
+                    font-size: 24px;
+                }
+                span {
+                    font-size: 16px;
+                    margin-left: 25px;
+                }
+            }
+        }
+    }
+    .current {
+        display: flex;
+        margin-left: 30px;
+        margin-top: 30px;
+        .two {
+            display: grid;
+            place-content: center;
+            border: 1px solid #111;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+        }
+        .current-page {
+            font-size: 24px;
+        }
+    }
+    .payment-info {
+        display: flex;
+        justify-content: space-between;
+        .left {
+            margin-left: 30px;
+            margin-top: 40px;
+            .png {
+                display: flex;
+                img {
+                    margin-right: 30px;
+                }
+            }
+            form {
+                margin-top: 50px;
+                .long-one {
+                    p {
+                        margin-top: 45px;
+                        * {
+                            box-shadow: none;
+                        }
+                        input {
+                            width: 555px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
+                        }
+                    }
+                }
+                .short-ones {
+                    display: flex;
+                    margin-top: 30px;
+                    justify-content: space-between;
+                    p {
+                        margin-top: 45px;
+                        * {
+                            box-shadow: none;
+                        }
+                        input {
+                            width: 210px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+            .radio {
+                font-size: 16px;
+                font-family: 'Roboto', serif;
+            }
+        }
+        .right {
+            width: 50%;
+            .resume {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #e9e9e9;
+                width: 70%;
+                height: 40px;
+                border-radius: 5px;
+                margin-left: 25%;
+                margin-top: 20px;
+                box-shadow: 5px 5px 5px lightgray;
+                .name {
+                    margin-left: 30px;
+                }
+                .drop {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .second-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 90px;
+        margin-top: 45px;
+        .previous {
+            margin-left: 30px;
+            width: 178px;
+            height: 33px;
+            font-size: 20px;
+            border: 1px solid #111;
+            border-radius: 500px;
+            background-color: #fff;
+        }
+        .previous:hover {
+            background-color: #111;
+            color: #fff;
+        }
+        .next {
+            margin-right: 30px;
+            width: 163px;
+            height: 33px;
+            font-size: 20px;
+            border: 1px solid #111;
+            border-radius: 500px;
+            background-color: #111;
+            color: #fff;
+        }
+        .next:hover {
+            background-color: #fff;
+            color: #111;
+        }
+    }
+}

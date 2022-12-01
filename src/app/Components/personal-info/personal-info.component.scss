@@ -1,0 +1,600 @@
+.page-container {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr .2fr .1fr .1fr .1fr 1fr .09fr .1fr;
+    grid-template-areas: 
+    "nav"
+    "checkout"
+    "price"
+    "current"
+    "switch"
+    "form"
+    "buttons"
+    "footer";
+    app-nav-bar {
+        grid-area: nav;
+    }
+    app-checkout-bar {
+        grid-area: checkout;
+    }
+    .price-bar {
+            grid-area: price;
+            background-color: #e9e9e9;
+            height: 68px;
+            .price {
+                padding-top: 30px;
+                margin-left: 30px;
+                .euros {
+                    b {
+                        font-size: 24px;
+                    }
+                    span {
+                        font-size: 16px;
+                        margin-left: 25px;
+                    }
+                }
+            }
+    }
+    .current {
+        grid-area: current;
+        display: flex;
+            margin-left: 30px;
+            margin-top: 30px;
+            .two {
+                display: grid;
+                place-content: center;
+                border: 1px solid #111;
+                border-radius: 50%;
+                width: 22px;
+                height: 22px;
+                margin-right: 10px;
+            }
+            .current-page {
+                font-size: 24px;
+            }
+    }
+    .first-buttons {
+        grid-area: switch;
+        display: flex;
+        margin-left: 15px;
+        margin-top: 30px;
+        .personal {
+            margin-left: 15px;
+            width: 161px;
+            height: 33px;
+            font-size: 20px;
+            border: 1px solid #111;
+            border-radius: 500px;
+            background-color: #111;
+            color: #fff;
+        }
+        .company {
+            width: 161px;
+            height: 33px;
+            font-size: 20px;
+            margin-left: 15px;
+            border: 1px solid #111;
+            border-radius: 500px;
+            background-color: #fff;
+        }
+    }
+    .forms {
+        grid-area:form;
+        form {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: .8fr .5fr .4fr .1fr;
+            grid-template-areas: 
+            "firstname lastname gift"
+            "address address gift"
+            "postal vat gift"
+            "radio radio radio"
+            ;
+            .firstname {
+                grid-area: firstname;
+                position: relative;
+                margin-left: 30px;
+                width: 325px;
+                p {
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
+                    }
+                    input {
+                        width: 325px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+            .lastname {
+                grid-area: lastname;
+                p {
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
+                    }
+                    input {
+                        width: 325px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+            .long-field {
+                grid-area: address;
+                p {
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
+                    }
+                    input {
+                        width: 917px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+            .post {
+                grid-area: postal;
+                p {
+                    margin-left: 30px;
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
+                    }
+                    input {
+                        width: 325px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+            .vat {
+                grid-area: vat;
+                p {
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
+                    }
+                    input {
+                        width: 325px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+            .radio {
+                grid-area: radio;
+                position: relative;
+                font-size: 16px;
+                padding-top: 50px;
+                margin-left: 30px;
+                #myRadioButton .ui-state-active {
+                    color: #000; 
+                    background: #fff;
+                    border: 1px solid #000 ;
+                }
+                label {
+                    margin-left: 10px;
+                }
+            }
+            .right {
+                grid-area: gift;
+                .gift-box {
+                    margin-top: 40px;
+                    width: 480px;
+                    img {
+                        width: 476px;
+                        position: relative;
+                    }
+                    .offer {
+                        position: absolute;
+                        top: 438px;
+                        .question {
+                            font-family: 'Roboto', serif;
+                            font-size: 24px;
+                        }
+                        .sugg {
+                            font-family: 'Roboto', serif;
+                            font-size: 14px;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+                .little-fields {
+                    display: flex;
+                    margin-right: 40px;
+                    .from {
+                        margin-right: 14px;
+                    }
+                    p {
+                        margin-top: 45px;
+                        * {
+                            box-shadow: none;
+                        }
+                        input {
+                            width: 210px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
+                        }
+                    }
+                }
+                .long-one {
+                    margin-right: 40px;
+                    p {
+                        margin-top: 45px;
+                        * {
+                            box-shadow: none;
+                            outline: none;
+                        }
+                        textarea {
+                            width: 440px;
+                            height: 50px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
+                            resize: none;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    .second-buttons {
+        grid-area: buttons;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 90px;
+            margin-top: 45px;
+            .previous {
+                margin-left: 30px;
+                width: 178px;
+                height: 33px;
+                font-size: 20px;
+                border: 1px solid #111;
+                border-radius: 500px;
+                background-color: #fff;
+            }
+            .previous:hover {
+                background-color: #111;
+                color: #fff;
+            }
+            .next {
+                margin-right: 30px;
+                width: 111px;
+                height: 33px;
+                font-size: 20px;
+                border: 1px solid #111;
+                border-radius: 500px;
+                background-color: #111;
+                color: #fff;
+            }
+            .next:hover {
+                background-color: #fff;
+                color: #111;
+            }
+    }
+    app-footer {
+        grid-area: footer;
+    }
+}
+@media only screen and (max-width: 1173px) {
+    .page-container {
+        *{
+            max-width: 100vw;
+        }
+        
+    }
+}
+@media only screen and (max-width: 1563px) {
+    .page-container {
+        .forms {
+            form {
+                .long-field {
+                    position: relative;
+                    p {
+                        position: absolute;
+                        left: 30px;
+                        margin-top: 45px;
+                        * {
+                            box-shadow: none;
+                        }
+                        input {
+                            width: 800px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+@media only screen and (max-width: 1500px) {
+    .page-container {
+
+        
+        max-width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.05fr .05fr .05fr .05fr .05fr .1fr .05fr .1fr;
+        grid-template-areas: 
+        "nav"
+        "checkout"
+        "price"
+        "current"
+        "switch"
+        "form"
+        "buttons"
+        "footer";
+        app-nav-bar {
+            grid-area: nav;
+        }
+        app-checkout-bar {
+            grid-area: checkout;
+        }
+        .price-bar {
+            grid-area: price;
+        }
+        .current{
+            grid-area: current;
+        }
+        .first-buttons {
+            grid-area: switch;
+        }
+  
+
+        .forms {
+            form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 0.8fr 0.2fr 0.2fr 0.2fr 0.5fr;
+                grid-template-areas: 
+                "firstname lastname"
+                "address address"
+                "postal vat"
+                "radio radio"
+                "gift gift";
+                .firstname {
+                    position: relative;
+                    margin-left: 70px;
+                }
+                .lastname {
+                    position: relative;
+                }
+                .long-field{
+                    margin-left: 44px;
+                    p {
+                        input {
+                            width: 980px;
+                        }
+                    }
+                }
+                .post {
+                    margin-left: 40px;
+                }
+                .radio {
+                    margin-left: 70px;
+                }
+                .right {
+                    margin-left: 70px;
+                    .gift-box{
+                        .offer {
+                            top: 935px;
+                        }
+                    }
+                }
+            }
+        }
+        .second-buttons {
+            grid-area: buttons;
+        }
+        app-footer {
+            grid-area: footer;
+        }
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .page-container {
+        .forms {
+            form {
+                .long-field {
+                    position: relative;
+                    p {
+                        position: absolute;
+                        left: 30px;
+                        margin-top: 45px;
+                        * {
+                            box-shadow: none;
+                        }
+                        input {
+                            width: 700px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+@media only screen and (max-width: 911px) {
+    .page-container {
+        max-width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.05fr .05fr .05fr .05fr .05fr .1fr .01fr .01fr;
+        grid-template-areas: 
+        "nav"
+        "checkout"
+        "price"
+        "current"
+        "switch"
+        "form"
+        "buttons"
+        "footer";
+        app-nav-bar {
+            grid-area: nav;
+        }
+        app-checkout-bar {
+            grid-area: checkout;
+        }
+        .price-bar {
+            grid-area: price;
+        }
+        .current{
+            grid-area: current;
+        }
+        .first-buttons {
+            grid-area: switch;
+        }
+        .forms {
+            grid-area: form;
+           form {
+            max-width: 100vw;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.05fr 0.05fr 0.4fr 0.4fr 0.4fr 0.05fr 0.05fr;
+            grid-template-areas: 
+            "firstname"
+            "lastname"
+            "va"   
+            "post"
+            "addres"
+            "radio"
+            "gift";
+           
+            .firstname {
+                grid-area: firstname;
+                margin: auto;
+
+            }
+            .lastname {
+                grid-area: lastname;
+                margin: auto;
+            }
+            .long-field {
+                grid-area: addres;
+                margin: 0;
+               
+            }
+            #myField {
+                width: 325px;
+                margin: 0;
+                display: block;
+                margin: auto;
+                
+                *{
+                    max-width: 325px;
+                    display: block;
+                    margin: auto;
+                    margin-left: -10px;
+                }
+            }
+            #theSec {
+                width: 325px;
+                margin: 0;
+                display: block;
+                margin: auto;
+                
+                *{
+                    max-width: 325px;
+                    display: block;
+                    margin: auto;
+                }
+            }
+            .post {
+                grid-area: post;
+            }
+            .vat {
+                grid-area: va;
+                margin: auto;
+            }
+            .radio {
+                grid-area: radio;
+                margin: auto;
+
+            }
+            .right {
+                grid-area: gift;
+                display: block;
+                margin: auto;
+                .gift-box {
+                    margin-top: 40px;
+                    width: 100%;
+                    position: relative;
+                    img {
+                        max-width: 370px;
+                    }
+                    .offer {
+                        position: absolute;
+                        top: 3px;
+                        .question {
+                            font-family: 'Roboto', serif;
+                            font-size: 18px;
+                        }
+                        .sugg {
+                            font-family: 'Roboto', serif;
+                            font-size: 10px;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+                .little-fields {
+                    display: block;
+                    max-width: 325px;
+                }
+                .long-one {
+                    max-width: 100%;
+                    p {
+                        textarea {
+                            width: 325px;
+                        }
+                    }
+                }
+
+            }
+             
+           } 
+        }
+        .second-buttons {
+            grid-area: buttons;
+        }
+        app-footer {
+            grid-area: footer;
+        }
+    }
+}

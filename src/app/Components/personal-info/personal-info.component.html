@@ -1,0 +1,232 @@
+<div class="page-container">
+<app-nav-bar></app-nav-bar>
+<app-checkout-bar></app-checkout-bar>
+<div class="price-bar">
+    <div class="price">
+        <div class="euros"><b>Total: 50€</b><span> per month.</span></div>
+        
+    </div>
+</div>
+<div class="current">
+    <div class="two"><span>2</span></div>
+    <div class="current-page">
+      YOUR DATA
+    </div>
+</div>
+<div class="first-buttons">
+    <button [ngClass]="{'personal': !plural, 'company': plural}" (click)="plural = !plural">PERSONAL</button>
+    <button [ngClass]="{'personal': plural, 'company': !plural}" (click)="plural = !plural">COMPANY</button>
+</div> 
+<div class="forms">
+    <form *ngIf="!plural" [formGroup]="personalInfo" >
+        <div class="firstname">
+            <p class="short-field p-float-label">
+                <input
+                id="float-input"
+                formControlName="firstName"
+                pInputText>
+                <label for="float-input">Firstname(s)<sup>*</sup></label>
+            </p>
+            <p class="short-field p-float-label">
+                <input
+                formControlName="email"
+                required
+                pInputText>
+                <label for="float-input">Email<sup>*</sup></label>
+            </p>
+            <p class="short-field p-float-label">
+            <p-dropdown
+            [autoDisplayFirst]="false"
+            [style]="{
+            'width': '325px',
+            'height': '34px',
+            'border-top': 'none',
+            'border-left': 'none',
+            'border-right': 'none',
+            'border-radius': 0,
+            'padding-top': 0}"
+            formControlName="country"
+            [options]="countries"
+            optionLabel="name.common"></p-dropdown>
+            <label for="float-input">Country<sup>*</sup></label>  
+            </p>                       
+            
+        </div>
+        <div class="lastname">
+            <p class="short-field p-float-label">
+                    <input formControlName="lastName" pInputText>
+                    <label for="float-input">Lastname(s)<sup>*</sup></label>
+            </p>
+            <p class="short-field p-float-label">
+                    <input formControlName="phone"  pInputText>
+                    <label for="float-input">Phone<sup>*</sup></label>
+            </p>
+            <p class="short-field p-float-label">
+                    <input formControlName="location"  pInputText>
+                    <label for="float-input">Location<sup>*</sup></label>
+            </p>
+        </div>
+        <div id="myField" class="long-field">
+            <p class="long p-float-label">
+                        <input formControlName="address" pInputText>
+                        <label for="float-input">Address<sup>*</sup></label>
+            </p>
+            <p *ngIf="checked" class="long p-float-label pf">
+                        <input formControlName="delivery" pInputText>
+                        <label for="float-input">Delivery Address</label>
+            </p>
+           
+        </div>
+        <div id="theSec" class="post">
+            <p class="short-field p-float-label ">
+                    <input formControlName="postal" pInputText>
+                    <label for="float-input">Postal code<sup>*</sup></label>
+            </p>
+        </div>
+        <div class="vat">
+            <p class="short-field p-float-label ">
+                    <input formControlName="vat" pInputText>
+                    <label for="float-input" >VAT number<sup>*</sup></label>
+            </p>
+        </div>
+        <div class="radio field-radiobutton">
+            <p-radioButton id="myRadioButton" name="radio1" color="primary" (click)="checked = !checked"></p-radioButton>
+            <label for="radio1">Add delivery address different from the billing address.</label>
+        </div>
+
+        <div class="right">
+            <div class="gift-box">
+                <img src="../../../assets/pngs/Group 100.png" alt="">
+                <div class="offer">
+                    <div class="question">Is this purchase an offer?</div>
+                    <div class="sugg">Add a custom message</div>
+                </div>
+            </div>
+            <div class="little-fields">
+                <p class="short-field p-float-label from">
+                        <input formControlName="from" pInputText>
+                        <label for="float-input">From<sup>*</sup></label>
+                </p>
+                <p class="short-field p-float-label ">
+                      <label for="float-input" >To<sup>*</sup> </label>
+                      <input formControlName="to" pInputText>
+                </p>
+            </div>
+            <div class="long-one">
+                <p class="p-float-label ">
+                    <textarea rows="5" id="float-input" formControlName="message" pInputTextarea ></textarea>
+                    <label for="float-input" >Message</label>
+                </p>
+            </div>
+        </div>
+    </form>
+    <form *ngIf="plural" [formGroup]="companyInfo" >
+                <div class="firstname">
+                    <p class="short-field p-float-label">
+                        <input
+                        id="float-input"
+                        formControlName="companyName"
+                        pInputText>
+                        <label for="float-input">Company Name<sup>*</sup></label>
+                    </p>
+                    <p class="short-field p-float-label">
+                        <input
+                        formControlName="workEmail"
+                        required
+                        pInputText>
+                        <label for="float-input">Work Email<sup>*</sup></label>
+                    </p>
+                    <p class="short-field p-float-label">
+                    <p-dropdown
+                    [autoDisplayFirst]="false"
+                    [style]="{
+                    'width': '325px',
+                    'height': '34px',
+                    'border-top': 'none',
+                    'border-left': 'none',
+                    'border-right': 'none',
+                    'border-radius': 0,
+                    'padding-top': 0}"
+                    formControlName="country"
+                    [options]="countries"
+                    optionLabel="name.common"></p-dropdown>
+                    <label for="float-input">Country<sup>*</sup></label>  
+                    </p>                       
+                    
+                </div>
+                <div class="lastname">
+                    <p class="short-field p-float-label">
+                            <input formControlName="employeeName" pInputText>
+                            <label for="float-input">Employee Name(s)<sup>*</sup></label>
+                    </p>
+                    <p class="short-field p-float-label">
+                            <input formControlName="role"  pInputText>
+                            <label for="float-input">Role in organisation<sup>*</sup></label>
+                    </p>
+                    <p class="short-field p-float-label">
+                            <input formControlName="location"  pInputText>
+                            <label for="float-input">Location<sup>*</sup></label>
+                    </p>
+                </div>
+            <div class="long-field">
+                <p class="long p-float-label">
+                            <input formControlName="address" pInputText>
+                            <label for="float-input">Address<sup>*</sup></label>
+                </p>
+                <p *ngIf="checked" class="long p-float-label pf">
+                            <input formControlName="delivery" pInputText>
+                            <label for="float-input">Delivery Address</label>
+                </p>
+               
+            </div>
+                <div class="post">
+                    <p class="short-field p-float-label ">
+                            <input formControlName="postal" pInputText>
+                            <label for="float-input">Postal code<sup>*</sup></label>
+                    </p>
+                </div>
+                <div class="vat">
+                    <p class="short-field p-float-label ">
+                            <input formControlName="vat" pInputText>
+                            <label for="float-input" >VAT number<sup>*</sup></label>
+                    </p>
+                </div>
+
+            <div class="radio field-radiobutton">
+                <p-radioButton id="myRadioButton" name="radio1" color="primary" (click)="checked = !checked"></p-radioButton>
+                <label for="radio1">Add delivery address different from the billing address.</label>
+            </div>
+        
+        <div class="right">
+            <div class="gift-box">
+                <img src="../../../assets/pngs/Group 100.png" alt="">
+                <div class="offer">
+                    <div class="question">Is this purchase an offer?</div>
+                    <div class="sugg">Add a custom message</div>
+                </div>
+            </div>
+            <div class="little-fields">
+                <p class="short-field p-float-label from">
+                        <input formControlName="from" pInputText>
+                        <label for="float-input">From<sup>*</sup></label>
+                </p>
+                <p class="short-field p-float-label ">
+                      <label for="float-input" >To<sup>*</sup> </label>
+                      <input formControlName="to" pInputText>
+                </p>
+            </div>
+            <div class="long-one">
+                <p class="p-float-label ">
+                    <textarea rows="5" id="float-input" formControlName="message" pInputTextarea ></textarea>
+                    <label for="float-input" >Message</label>
+                </p>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="second-buttons">
+    <button (click)="back()" class="previous">PREVIOUS</button>
+    <button (click)="front()" [disabled]="!(personalInfo.valid || companyInfo.valid)" class="next">NEXT</button>
+</div>
+<app-footer></app-footer>
+</div>

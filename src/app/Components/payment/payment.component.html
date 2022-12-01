@@ -1,0 +1,59 @@
+<div class="page-container">
+    <app-nav-bar></app-nav-bar>
+    <app-checkout-bar></app-checkout-bar>
+    <div class="price-bar">
+        <div class="price">
+            <div class="euros"><b>Total: 31.98€</b><span>26.99€(Product) + 4.99€ (Delivery Fee)</span></div>
+        </div>
+    </div>
+    <div class="current">
+        <div class="two"><span>3</span></div>
+        <div class="current-page">
+          Payment
+        </div>
+    </div>
+    <div class="payment-info">
+        <div class="left">
+            <div class="png">
+                <img src="../../../assets/pngs/Group 105.png" alt="">
+                <div class="pay">Pay securely with your credit card.</div>
+            </div>
+            <form [formGroup]="cardDetails" >
+                <div class="long-one">
+                    <p class="long p-float-label">
+                        <input formControlName="number" pInputText>
+                        <label for="float-input">Credit Card<sup>*</sup></label>
+                    </p>    
+                </div>
+                <div class="short-ones">
+                    <p class="short p-float-label">
+                        <input formControlName="expiry" pInputText>
+                        <label for="float-input">Expiration Date<sup>*</sup></label>
+                    </p>
+                    <p class="short p-float-label">
+                        <input formControlName="cvc" pInputText>
+                        <label for="float-input">CVC<sup>*</sup></label>
+                    </p>
+                </div>
+            </form>
+            <label class="radio">
+                <mat-radio-button color="primary" (click)="checked = !checked">I have read and accept the stores terms and conditions<sup>*</sup> .</mat-radio-button>
+            </label>
+        </div>
+        <div class="right">
+            <div class="resume">
+                <div class="name">Resume</div>
+                <div class="drop">
+                    <span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second-buttons">
+        <button routerLink="/shop/checkout/personal-info" class="previous">PREVIOUS</button>
+        <button [disabled]="!(cardDetails.valid && checked)" routerLink="/shop/checkout/payment/success" class="next">CHECKOUT</button>
+    </div>
+</div>
+<app-footer></app-footer>
