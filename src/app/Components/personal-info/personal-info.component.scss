@@ -1,6 +1,25 @@
 .page-container {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr .2fr .1fr .1fr .1fr 1fr .09fr .1fr;
+    grid-template-areas: 
+    "nav"
+    "checkout"
+    "price"
+    "current"
+    "switch"
+    "form"
+    "buttons"
+    "footer";
+    app-nav-bar {
+        grid-area: nav;
+    }
+    app-checkout-bar {
+        grid-area: checkout;
+    }
     .price-bar {
-        width: 100%;
+            grid-area: price;
             background-color: #e9e9e9;
             height: 68px;
             .price {
@@ -18,6 +37,7 @@
             }
     }
     .current {
+        grid-area: current;
         display: flex;
             margin-left: 30px;
             margin-top: 30px;
@@ -35,6 +55,7 @@
             }
     }
     .first-buttons {
+        grid-area: switch;
         display: flex;
         margin-left: 15px;
         margin-top: 30px;
@@ -59,130 +80,138 @@
         }
     }
     .forms {
+        grid-area:form;
         form {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: flex-start;
-            margin-top: 15px;
+            display: grid;
             width: 100%;
-            .left {
-                width: 75%;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: .8fr .5fr .4fr .1fr;
+            grid-template-areas: 
+            "firstname lastname gift"
+            "address address gift"
+            "postal vat gift"
+            "radio radio radio"
+            ;
+            .firstname {
+                grid-area: firstname;
+                position: relative;
                 margin-left: 30px;
-                .small-fields {
-                    display: flex;
-                    width: 55.7%;
-                    justify-content: space-between;
-                    .firstname {
-                        p {
-                            margin-top: 45px;
-                            * {
-                                box-shadow: none;
-                            }
-                            input {
-                                width: 325px;
-                                border-top: none;
-                                border-left: none;
-                                border-right: none;
-                                border-radius: 0;
-                                padding-top: 0;
-                            }
-                        }
+                p {
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
                     }
-                    .lastname {
-                        p {
-                            margin-top: 45px;
-                            * {
-                                box-shadow: none;
-                            }
-                            input {
-                                width: 325px;
-                                border-top: none;
-                                border-left: none;
-                                border-right: none;
-                                border-radius: 0;
-                                padding-top: 0;
-                            }
-                        }
-                    }
-                }
-                .long-field {
-                    p {
-                        margin-top: 45px;
-                        * {
-                            box-shadow: none;
-                        }
-                        input {
-                            width: 784px;
-                            border-top: none;
-                            border-left: none;
-                            border-right: none;
-                            border-radius: 0;
-                            padding-top: 0;
-                        }
-                    }
-                }
-                .short-fields {
-                    display: flex;
-                    width: 55.7%;
-                    justify-content: space-between;
-                    .post {
-                        p {
-                            margin-top: 45px;
-                            * {
-                                box-shadow: none;
-                            }
-                            input {
-                                width: 325px;
-                                border-top: none;
-                                border-left: none;
-                                border-right: none;
-                                border-radius: 0;
-                                padding-top: 0;
-                            }
-                        }
-                    }
-                    .vat {
-                        p {
-                            margin-top: 45px;
-                            * {
-                                box-shadow: none;
-                            }
-                            input {
-                                width: 325px;
-                                border-top: none;
-                                border-left: none;
-                                border-right: none;
-                                border-radius: 0;
-                                padding-top: 0;
-                            }
-                        }
-                    }
-
-
-                }
-                .radio {
-                    font-size: 16px;
-                    margin-top: 10px;
-                    #myRadioButton .ui-state-active {
-                        color: #000; 
-                        background: #fff;
-                        border: 1px solid #000 ;
-                    }
-                    label {
-                        margin-left: 10px;
+                    input {
+                        width: 325px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
                     }
                 }
             }
+            .lastname {
+                grid-area: lastname;
+                p {
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
+                    }
+                    input {
+                        width: 325px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+            .long-field {
+                grid-area: address;
+                position: relative;
+                p {
+                    position: absolute;
+                    left: 30px;
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
+                    }
+                    input {
+                        width: 843px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+            .post {
+                grid-area: postal;
+                position: relative;
+                p {
+                    position: absolute;
+                    left: 30px;
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
+                    }
+                    input {
+                        width: 325px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+            .vat {
+                grid-area: vat;
+                p {
+                    margin-top: 45px;
+                    * {
+                        box-shadow: none;
+                    }
+                    input {
+                        width: 325px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-radius: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+            .radio {
+                grid-area: radio;
+                position: relative;
+                font-size: 16px;
+                padding-top: 50px;
+                margin-left: 30px;
+                #myRadioButton .ui-state-active {
+                    color: #000; 
+                    background: #fff;
+                    border: 1px solid #000 ;
+                }
+                label {
+                    margin-left: 10px;
+                }
+            }
             .right {
-                width: 25%;
+                grid-area: gift;
                 .gift-box {
+                    margin-top: 40px;
+                    width: 480px;
                     img {
                         width: 476px;
                         position: relative;
                     }
                     .offer {
                         position: absolute;
-                        top: 417px;
+                        top: 438px;
                         .question {
                             font-family: 'Roboto', serif;
                             font-size: 24px;
@@ -240,6 +269,7 @@
         }
     }
     .second-buttons {
+        grid-area: buttons;
             display: flex;
             justify-content: space-between;
             width: 100%;
@@ -272,5 +302,8 @@
                 background-color: #fff;
                 color: #111;
             }
+    }
+    app-footer {
+        grid-area: footer;
     }
 }
