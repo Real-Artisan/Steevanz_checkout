@@ -22,94 +22,83 @@
         <div class="left">
             <div class="small-fields">
                 <div class="firstname">
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Firstname(s)</mat-label>
-                          <input formControlName="firstName" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                        <input
+                        id="float-input"
+                        formControlName="firstName"
+                        pInputText>
+                        <label for="float-input">Firstname(s)<sup>*</sup></label>
                     </p>
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Email</mat-label>
-                          <input formControlName="email" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                        <input
+                        formControlName="email"
+                        required
+                        pInputText>
+                        <label for="float-input">Email<sup>*</sup></label>
                     </p>
-                    <p class="short-field">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Country</mat-label>
-                            <mat-select formControlName="country" required>
-                              <mat-option *ngFor="let country of countries" value="one">{{country.name.common}}</mat-option>
-                            </mat-select>
-                         </mat-form-field>
-                    </p>
+                    <p class="short-field p-float-label">
+                    <p-dropdown
+                    [autoDisplayFirst]="false"
+                    [style]="{
+                    'width': '325px',
+                    'height': '34px',
+                    'border-top': 'none',
+                    'border-left': 'none',
+                    'border-right': 'none',
+                    'border-radius': 0,
+                    'padding-top': 0}"
+                    formControlName="country"
+                    [options]="countries"
+                    optionLabel="name.common"></p-dropdown>
+                    <label for="float-input">Country<sup>*</sup></label>  
+                    </p>                       
+                    
                 </div>
                 <div class="lastname">
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Lastname(s)</mat-label>
-                          <input formControlName="lastName" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                            <input formControlName="lastName" pInputText>
+                            <label for="float-input">Lastname(s)<sup>*</sup></label>
                     </p>
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Phone</mat-label>
-                          <input formControlName="phone" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                            <input formControlName="phone"  pInputText>
+                            <label for="float-input">Phone<sup>*</sup></label>
                     </p>
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Location</mat-label>
-                          <input formControlName="location" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                            <input formControlName="location"  pInputText>
+                            <label for="float-input">Location<sup>*</sup></label>
                     </p>
                 </div>
             </div>
             <div class="long-field">
-                <p class="long">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Address</mat-label>
-                          <input formControlName="address" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                <p class="long p-float-label">
+                            <input formControlName="address" pInputText>
+                            <label for="float-input">Address<sup>*</sup></label>
                 </p>
-                <p *ngIf="checked" class="long">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Delivery Address</mat-label>
-                          <input formControlName="delivery" matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                <p *ngIf="checked" class="long p-float-label pf">
+                            <input formControlName="delivery" pInputText>
+                            <label for="float-input">Delivery Address</label>
                 </p>
                
             </div>
             <div class="short-fields">
                 <div class="post">
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Postal code</mat-label>
-                          <input formControlName="postal" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label ">
+                            <input formControlName="postal" pInputText>
+                            <label for="float-input">Postal code<sup>*</sup></label>
                     </p>
                 </div>
                 <div class="vat">
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>VAT number</mat-label>
-                          <input formControlName="vat" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label ">
+                            <input formControlName="vat" pInputText>
+                            <label for="float-input" >VAT number<sup>*</sup></label>
                     </p>
                 </div>
             </div>
 
-            <label class="radio">
-                <mat-radio-button color="primary" (change)="checked = !checked">Add delivery address different from the billing address.</mat-radio-button>
-            </label>
+            <div class="radio field-radiobutton">
+                <p-radioButton id="myRadioButton" name="radio1" color="primary" (click)="checked = !checked"></p-radioButton>
+                <label for="radio1">Add delivery address different from the billing address.</label>
+            </div>
         </div>
         <div class="right">
             <div class="gift-box">
@@ -120,28 +109,19 @@
                 </div>
             </div>
             <div class="little-fields">
-                <p class="short-field from">
-                    <mat-form-field appearance="fill" >
-                      <mat-label>From<sup>*</sup></mat-label>
-                      <input formControlName="from" matInput>
-                      <!-- <mat-hint>Hint</mat-hint> -->
-                    </mat-form-field>
+                <p class="short-field p-float-label from">
+                        <input formControlName="from" pInputText>
+                        <label for="float-input">From<sup>*</sup></label>
                 </p>
-                <p class="short-field">
-                    <mat-form-field appearance="fill" >
-                      <mat-label>To<sup>*</sup> </mat-label>
-                      <input formControlName="to" matInput>
-                      <!-- <mat-hint>Hint</mat-hint> -->
-                    </mat-form-field>
+                <p class="short-field p-float-label ">
+                      <label for="float-input" >To<sup>*</sup> </label>
+                      <input formControlName="to" pInputText>
                 </p>
             </div>
             <div class="long-one">
-                <p class="short-field">
-                    <mat-form-field appearance="fill" >
-                      <mat-label>Message</mat-label>
-                      <textarea formControlName="message" matInput placeholder="Write your message here" ></textarea>
-                      <!-- <mat-hint>Hint</mat-hint> -->
-                    </mat-form-field>
+                <p class="p-float-label ">
+                    <textarea rows="5" id="float-input" formControlName="message" pInputTextarea ></textarea>
+                    <label for="float-input" >Message</label>
                 </p>
             </div>
         </div>
@@ -150,94 +130,83 @@
         <div class="left">
             <div class="small-fields">
                 <div class="firstname">
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Company Name</mat-label>
-                          <input formControlName="companyName" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                        <input
+                        id="float-input"
+                        formControlName="companyName"
+                        pInputText>
+                        <label for="float-input">Company Name<sup>*</sup></label>
                     </p>
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Work Email</mat-label>
-                          <input formControlName="workEmail" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                        <input
+                        formControlName="workEmail"
+                        required
+                        pInputText>
+                        <label for="float-input">Work Email<sup>*</sup></label>
                     </p>
-                    <p class="short-field">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Country</mat-label>
-                            <mat-select formControlName="country" required>
-                                <mat-option *ngFor="let country of countries" value="one">{{country.name.common}}</mat-option>
-                            </mat-select>
-                         </mat-form-field>
-                    </p>
+                    <p class="short-field p-float-label">
+                    <p-dropdown
+                    [autoDisplayFirst]="false"
+                    [style]="{
+                    'width': '325px',
+                    'height': '34px',
+                    'border-top': 'none',
+                    'border-left': 'none',
+                    'border-right': 'none',
+                    'border-radius': 0,
+                    'padding-top': 0}"
+                    formControlName="country"
+                    [options]="countries"
+                    optionLabel="name.common"></p-dropdown>
+                    <label for="float-input">Country<sup>*</sup></label>  
+                    </p>                       
+                    
                 </div>
                 <div class="lastname">
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Employee Name(s)</mat-label>
-                          <input formControlName="employeeName" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                            <input formControlName="employeeName" pInputText>
+                            <label for="float-input">Employee Name(s)<sup>*</sup></label>
                     </p>
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Role in Organisation</mat-label>
-                          <input formControlName="role" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                            <input formControlName="role"  pInputText>
+                            <label for="float-input">Role in organisation<sup>*</sup></label>
                     </p>
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Location</mat-label>
-                          <input formControlName="location" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label">
+                            <input formControlName="location"  pInputText>
+                            <label for="float-input">Location<sup>*</sup></label>
                     </p>
                 </div>
             </div>
             <div class="long-field">
-                <p class="long">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Address</mat-label>
-                          <input formControlName="address" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                <p class="long p-float-label">
+                            <input formControlName="address" pInputText>
+                            <label for="float-input">Address<sup>*</sup></label>
                 </p>
-                <p *ngIf="checked" class="long">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Delivery Address</mat-label>
-                          <input formControlName="delivery" matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                <p *ngIf="checked" class="long p-float-label pf">
+                            <input formControlName="delivery" pInputText>
+                            <label for="float-input">Delivery Address</label>
                 </p>
                
             </div>
             <div class="short-fields">
                 <div class="post">
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Postal code</mat-label>
-                          <input formControlName="postal" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label ">
+                            <input formControlName="postal" pInputText>
+                            <label for="float-input">Postal code<sup>*</sup></label>
                     </p>
                 </div>
                 <div class="vat">
-                    <p class="short-field">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>VAT number</mat-label>
-                          <input formControlName="vat" required matInput>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short-field p-float-label ">
+                            <input formControlName="vat" pInputText>
+                            <label for="float-input" >VAT number<sup>*</sup></label>
                     </p>
                 </div>
             </div>
 
-            <label class="radio">
-                <mat-radio-button color="primary" (change)="checked = !checked">Add delivery address different from the billing address.</mat-radio-button>
-            </label>
+            <div class="radio field-radiobutton">
+                <p-radioButton id="myRadioButton" name="radio1" color="primary" (click)="checked = !checked"></p-radioButton>
+                <label for="radio1">Add delivery address different from the billing address.</label>
+            </div>
         </div>
         <div class="right">
             <div class="gift-box">
@@ -248,28 +217,19 @@
                 </div>
             </div>
             <div class="little-fields">
-                <p class="short-field from">
-                    <mat-form-field appearance="fill" >
-                      <mat-label>From<sup>*</sup></mat-label>
-                      <input formControlName="from" matInput>
-                      <!-- <mat-hint>Hint</mat-hint> -->
-                    </mat-form-field>
+                <p class="short-field p-float-label from">
+                        <input formControlName="from" pInputText>
+                        <label for="float-input">From<sup>*</sup></label>
                 </p>
-                <p class="short-field">
-                    <mat-form-field appearance="fill" >
-                      <mat-label>To<sup>*</sup> </mat-label>
-                      <input formControlName="to" matInput>
-                      <!-- <mat-hint>Hint</mat-hint> -->
-                    </mat-form-field>
+                <p class="short-field p-float-label ">
+                      <label for="float-input" >To<sup>*</sup> </label>
+                      <input formControlName="to" pInputText>
                 </p>
             </div>
             <div class="long-one">
-                <p class="short-field">
-                    <mat-form-field appearance="fill" >
-                      <mat-label>Message</mat-label>
-                      <textarea formControlName="message" matInput placeholder="Write your message here" ></textarea>
-                      <!-- <mat-hint>Hint</mat-hint> -->
-                    </mat-form-field>
+                <p class="p-float-label ">
+                    <textarea rows="5" id="float-input" formControlName="message" pInputTextarea ></textarea>
+                    <label for="float-input" >Message</label>
                 </p>
             </div>
         </div>

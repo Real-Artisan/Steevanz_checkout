@@ -1,7 +1,6 @@
 
 .page-container {
     min-height: 100%;
-   
     .page {
         .back{
             display: flex;
@@ -79,17 +78,31 @@
                 .coupon-content {
                     padding-top: 15px;
                     margin-left: 45%;
-                    p {
+                    .quest {
                         font-size: 24px;
+                        padding-bottom: 10px;
                     }
                     form {
                         #coupon-field {
                             *{
-                                background-color: #fff;
+                                background-color: transparent;
+                                box-shadow: none;
                             }
-                            mat-form-field {
+                            i {
+                                padding: 15px 0 0 0;
+                            }
+                            input {
                                 width: 440px;
+                                margin-top: 30px;
+                                border-top: none;
+                                border-left: none;
+                                border-right: none;
+                                border-radius: 0;
+                                padding-top: 0;
                                     
+                            }
+                            label {
+                                padding: 15px 0 0 0;
                             }
                             
                         }

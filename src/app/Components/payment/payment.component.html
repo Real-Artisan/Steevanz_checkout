@@ -20,42 +20,33 @@
             </div>
             <form [formGroup]="cardDetails" >
                 <div class="long-one">
-                    <p class="long">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Credit Card</mat-label>
-                          <input formControlName="number" matInput required>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
-                    </p>
+                    <p class="long p-float-label">
+                        <input formControlName="number" pInputText>
+                        <label for="float-input">Credit Card<sup>*</sup></label>
+                    </p>    
                 </div>
                 <div class="short-ones">
-                    <p class="short">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>Expiration Date</mat-label>
-                          <input formControlName="expiry" placeholder="MM/YY" matInput required>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short p-float-label">
+                        <input formControlName="expiry" pInputText>
+                        <label for="float-input">Expiration Date<sup>*</sup></label>
                     </p>
-                    <p class="short">
-                        <mat-form-field appearance="fill" >
-                          <mat-label>CVC</mat-label>
-                          <input formControlName="cvc" matInput required>
-                          <!-- <mat-hint>Hint</mat-hint> -->
-                        </mat-form-field>
+                    <p class="short p-float-label">
+                        <input formControlName="cvc" pInputText>
+                        <label for="float-input">CVC<sup>*</sup></label>
                     </p>
                 </div>
             </form>
             <label class="radio">
-                <mat-radio-button color="primary" (change)="checked = !checked">I have read and accept the stores terms and conditions<sup>*</sup> .</mat-radio-button>
+                <mat-radio-button color="primary" (click)="checked = !checked">I have read and accept the stores terms and conditions<sup>*</sup> .</mat-radio-button>
             </label>
         </div>
         <div class="right">
             <div class="resume">
                 <div class="name">Resume</div>
                 <div class="drop">
-                    <mat-icon class="material-icons-outlined">
+                    <span class="material-symbols-outlined">
                         arrow_drop_down
-                    </mat-icon>
+                    </span>
                 </div>
             </div>
         </div>

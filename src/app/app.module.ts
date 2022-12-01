@@ -22,6 +22,10 @@ import { DataService } from './Services/data.service';
 import {MatRadioModule} from '@angular/material/radio';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import {InputTextModule} from 'primeng/inputtext';
+import {DropdownModule} from 'primeng/dropdown';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 
 
@@ -50,7 +54,12 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     MatRadioModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    InputTextModule,
+    DropdownModule,
+    InputTextareaModule,
+    RadioButtonModule
+  
   ],
   providers: [StepperService, DataService],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
+<app-nav-bar></app-nav-bar>
 <div class="page-container">
-    <app-nav-bar></app-nav-bar>
-    <app-checkout-bar></app-checkout-bar>
+  <app-checkout-bar></app-checkout-bar>
+
     <div class="page">
       <div routerLink="/" class="back">
         <span class="material-symbols-outlined">
@@ -28,15 +29,12 @@
         </div>
         <div class="coupon">
           <div class="coupon-content">
-            <p>Do you have a discount coupon?</p>
+            <p class="quest">Do you have a discount coupon?</p>
             <form [formGroup]="coupon" >
-              <p id="coupon-field">
-                <mat-form-field appearance="fill" >
-                  <mat-label>Write your coupon here</mat-label>
-                  <input formControlName="couponCode" matInput>
-                  <mat-icon matSuffix>cached</mat-icon>
-                  <!-- <mat-hint>Hint</mat-hint> -->
-                </mat-form-field>
+              <p id="coupon-field" class="p-float-label p-input-icon-right ">
+                <i class="pi pi-sync"></i>
+                <input id="float-input" type="text" formControlName="couponCode" pInputText>
+                <label for="float-input" >Write your coupon here</label>
               </p>
             </form>
           </div>

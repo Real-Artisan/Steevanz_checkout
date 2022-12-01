@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StepperService } from 'src/app/Services/stepper.service';
 
@@ -12,13 +12,13 @@ import { StepperService } from 'src/app/Services/stepper.service';
 export class PaymentComponent {
   cardDetails!: FormGroup;
   checked:boolean = false;
-  constructor( private step: StepperService, private router: Router, private formbuilder: FormBuilder) {
+  constructor( private step: StepperService, private router: Router) {
     const route = this.router.routerState.snapshot.url;
     this.step.checkRoute(route);
-    this.cardDetails = this.formbuilder.group({
-      number: ['', Validators.compose([Validators.required])],
-      expiry: ['', Validators.compose([Validators.required])],
-      cvc: ['', Validators.compose([Validators.required])],
+    this.cardDetails = new FormGroup({
+      number: new FormControl('', Validators.compose([Validators.required])),
+      expiry: new FormControl('', Validators.compose([Validators.required])),
+      cvc: new FormControl('', Validators.compose([Validators.required])),
     });
   }
 }

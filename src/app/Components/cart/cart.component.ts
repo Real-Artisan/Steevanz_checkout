@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatFormFieldDefaultOptions, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { Router } from '@angular/router';
 import { StepperService } from 'src/app/Services/stepper.service';
@@ -12,11 +12,11 @@ import { StepperService } from 'src/app/Services/stepper.service';
 })
 export class CartComponent {
   coupon!: FormGroup;
-  constructor( private step: StepperService, private router: Router, private formBuilder: FormBuilder) {
+  constructor( private step: StepperService, private router: Router) {
     const route = this.router.routerState.snapshot.url;
     this.step.checkRoute(route);
-    this.coupon = formBuilder.group({
-      'couponCode': new FormControl(''),
+    this.coupon = new FormGroup({
+      couponCode: new FormControl(''),
     });
   }
 

@@ -51,11 +51,17 @@
                 margin-top: 50px;
                 .long-one {
                     p {
+                        margin-top: 45px;
                         * {
-                            background-color: transparent;
+                            box-shadow: none;
                         }
-                        mat-form-field {
+                        input {
                             width: 555px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
                         }
                     }
                 }
@@ -64,11 +70,17 @@
                     margin-top: 30px;
                     justify-content: space-between;
                     p {
+                        margin-top: 45px;
                         * {
-                            background-color: transparent;
+                            box-shadow: none;
                         }
-                        mat-form-field {
+                        input {
                             width: 210px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-radius: 0;
+                            padding-top: 0;
                         }
                     }
                 }

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/Services/data.service';
 import { StepperService } from 'src/app/Services/stepper.service';
@@ -17,41 +17,41 @@ export class PersonalInfoComponent {
   checked: boolean = false;
   plural: boolean = false;
   countries: any = [];
-  constructor( private step: StepperService, private router: Router, private formbuilder: FormBuilder, private data: DataService) {
+  constructor( private step: StepperService, private router: Router, private data: DataService) {
     const route = this.router.routerState.snapshot.url;
     this.step.checkRoute(route);
     this.data.getCountries().subscribe((result) => {
       this.countries = result.sort((a: { name: { common: number; }; }, b: { name: { common: number; }; }) => (a.name.common > b.name.common)? 1 : -1)
     })
-    this.personalInfo = this.formbuilder.group({
-      firstName: ['', Validators.compose([Validators.required])],
-      lastName: ['', Validators.compose([Validators.required])],
-      email: ['', Validators.compose([Validators.required])],
-      phone: ['', Validators.compose([Validators.required,])],
-      country: ['', Validators.compose([Validators.required])],
-      location: ['', Validators.compose([Validators.required])],
-      address: ['', Validators.compose([Validators.required])],
-      delivery: ['',],
-      postal: ['', Validators.compose([Validators.required])],
-      vat: ['', Validators.compose([Validators.required])],
-      from: ['', ],
-      to: ['', ],
-      message: ['',],
+    this.personalInfo = new FormGroup({
+      firstName: new FormControl('', Validators.compose([Validators.required,])),
+      lastName: new FormControl('', Validators.compose([Validators.required])),
+      email: new FormControl('', Validators.compose([Validators.required])),
+      phone: new FormControl('', Validators.compose([Validators.required,])),
+      country: new FormControl('', Validators.compose([Validators.required])),
+      location: new FormControl('', Validators.compose([Validators.required])),
+      address: new FormControl('', Validators.compose([Validators.required])),
+      delivery: new FormControl('',),
+      postal: new FormControl('', Validators.compose([Validators.required])),
+      vat: new FormControl('', Validators.compose([Validators.required])),
+      from: new FormControl('', ),
+      to: new FormControl('', ),
+      message: new FormControl('',),
     });
-    this.companyInfo = this.formbuilder.group({
-      companyName: ['', Validators.compose([Validators.required])],
-      employeeName: ['', Validators.compose([Validators.required])],
-      workEmail: ['', Validators.compose([Validators.required])],
-      role: ['', Validators.compose([Validators.required,])],
-      country: ['', Validators.compose([Validators.required])],
-      location: ['', Validators.compose([Validators.required])],
-      address: ['', Validators.compose([Validators.required])],
-      delivery: ['',],
-      postal: ['', Validators.compose([Validators.required])],
-      vat: ['', Validators.compose([Validators.required])],
-      from: ['', ],
-      to: ['', ],
-      message: ['',],
+    this.companyInfo = new FormGroup({
+      companyName: new FormControl('', Validators.compose([Validators.required])),
+      employeeName: new FormControl('', Validators.compose([Validators.required])),
+      workEmail: new FormControl('', Validators.compose([Validators.required])),
+      role: new FormControl('', Validators.compose([Validators.required,])),
+      country: new FormControl('', Validators.compose([Validators.required])),
+      location: new FormControl('', Validators.compose([Validators.required])),
+      address: new FormControl('', Validators.compose([Validators.required])),
+      delivery: new FormControl('',),
+      postal: new FormControl('', Validators.compose([Validators.required])),
+      vat: new FormControl('', Validators.compose([Validators.required])),
+      from: new FormControl('', ),
+      to: new FormControl('', ),
+      message: new FormControl('',),
     });
   }
   front() {
