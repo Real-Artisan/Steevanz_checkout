@@ -64,6 +64,11 @@
     .nav-container {
         max-width: 100vw;
         grid-template-columns: 1fr 1fr;
+        .brand {
+            img {
+                height: 22px;
+            }
+        }
         .menu-icons {
             right: 20px;
             span {

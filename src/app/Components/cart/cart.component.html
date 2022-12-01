@@ -1,20 +1,20 @@
-<app-nav-bar></app-nav-bar>
 <div class="page-container">
+  <app-nav-bar></app-nav-bar>
   <app-checkout-bar></app-checkout-bar>
-
-    <div class="page">
       <div routerLink="/" class="back">
         <span class="material-symbols-outlined">
         arrow_back_ios
         </span>
         <span>Continue Shopping</span>
       </div> 
+
       <div class="current">
         <div class="one"><span>1</span></div>
         <div class="current-page">
           Check your cart
         </div>
       </div> 
+
       <div class="text-and-stuff">
         <div class="product">
           <div class="name">
@@ -27,18 +27,17 @@
           <p>One position available every month.</p>
           <img src="../../../assets/pngs/undraw_add_tasks_re_s5yj.svg" alt="">
         </div>
-        <div class="coupon">
-          <div class="coupon-content">
-            <p class="quest">Do you have a discount coupon?</p>
-            <form [formGroup]="coupon" >
-              <p id="coupon-field" class="p-float-label p-input-icon-right ">
-                <i class="pi pi-sync"></i>
-                <input id="float-input" type="text" formControlName="couponCode" pInputText>
-                <label for="float-input" >Write your coupon here</label>
-              </p>
-            </form>
-          </div>
-
+      </div>
+      <div class="coupon">
+        <div class="coupon-content">
+          <p class="quest">Do you have a discount coupon?</p>
+          <form [formGroup]="coupon" >
+            <p id="coupon-field" class="p-float-label p-input-icon-right ">
+              <i class="pi pi-sync"></i>
+              <input id="float-input" type="text" formControlName="couponCode" pInputText>
+              <label for="float-input" >Write your coupon here</label>
+            </p>
+          </form>
         </div>
       </div>
       <div class="price-bar">
@@ -48,9 +47,8 @@
         </div>
     </div>
     <div class="buttons">
-      <button class="clear">CLEAN CART</button>
+      <button routerLink="/" class="clear">CLEAN CART</button>
       <button (click)="front()" class="next">NEXT</button>
     </div>
-    </div>
+    <app-footer></app-footer>
   </div>
-  <app-footer></app-footer>
