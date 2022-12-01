@@ -96,6 +96,7 @@
                 grid-area: firstname;
                 position: relative;
                 margin-left: 30px;
+                width: 325px;
                 p {
                     margin-top: 45px;
                     * {
@@ -130,16 +131,13 @@
             }
             .long-field {
                 grid-area: address;
-                position: relative;
                 p {
-                    position: absolute;
-                    left: 30px;
                     margin-top: 45px;
                     * {
                         box-shadow: none;
                     }
                     input {
-                        width: 843px;
+                        width: 917px;
                         border-top: none;
                         border-left: none;
                         border-right: none;
@@ -150,10 +148,8 @@
             }
             .post {
                 grid-area: postal;
-                position: relative;
                 p {
-                    position: absolute;
-                    left: 30px;
+                    margin-left: 30px;
                     margin-top: 45px;
                     * {
                         box-shadow: none;
@@ -307,14 +303,12 @@
         grid-area: footer;
     }
 }
-@media only screen and (max-width: 950px) {
-
-}
 @media only screen and (max-width: 1173px) {
     .page-container {
         *{
             max-width: 100vw;
         }
+        
     }
 }
 @media only screen and (max-width: 1563px) {
@@ -459,11 +453,10 @@
 }
 @media only screen and (max-width: 911px) {
     .page-container {
-
         max-width: 100vw;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.05fr .05fr .05fr .05fr .05fr .1fr .05fr .1fr;
+        grid-template-rows: 0.05fr .05fr .05fr .05fr .05fr .1fr .01fr .01fr;
         grid-template-areas: 
         "nav"
         "checkout"
@@ -491,51 +484,84 @@
         .forms {
             grid-area: form;
            form {
+            max-width: 100vw;
+            display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: .05fr .05fr .05fr .05fr .05fr .05fr .05fr;
+            grid-template-rows: 0.05fr 0.05fr 0.4fr 0.4fr 0.4fr 0.05fr 0.05fr;
             grid-template-areas: 
             "firstname"
             "lastname"
-            "address"
-            "postal"
-            "vat"   
+            "va"   
+            "post"
+            "addres"
             "radio"
-            "gift" ;
-            *{
-                max-width: 80vw;
-            }
+            "gift";
+           
             .firstname {
                 grid-area: firstname;
+                margin: auto;
 
             }
             .lastname {
                 grid-area: lastname;
+                margin: auto;
             }
             .long-field {
-                grid-area: address;
+                grid-area: addres;
+                margin: 0;
+               
+            }
+            #myField {
+                width: 325px;
+                margin: 0;
+                display: block;
+                margin: auto;
+                
+                *{
+                    max-width: 325px;
+                    display: block;
+                    margin: auto;
+                    margin-left: -10px;
+                }
+            }
+            #theSec {
+                width: 325px;
+                margin: 0;
+                display: block;
+                margin: auto;
+                
+                *{
+                    max-width: 325px;
+                    display: block;
+                    margin: auto;
+                }
             }
             .post {
-                grid-area: postal;
+                grid-area: post;
             }
             .vat {
-                grid-area: vat;
+                grid-area: va;
+                margin: auto;
             }
             .radio {
                 grid-area: radio;
+                margin: auto;
+
             }
             .right {
                 grid-area: gift;
+                display: block;
+                margin: auto;
                 .gift-box {
                     margin-top: 40px;
-                    margin-left: auto;
-                    margin-right: auto;
+                    width: 100%;
                     position: relative;
                     img {
-                        width: 476px;
+                        max-width: 370px;
                     }
                     .offer {
                         position: absolute;
-                        top: 10px;
+                        top: 3px;
                         .question {
                             font-family: 'Roboto', serif;
                             font-size: 18px;
@@ -544,6 +570,18 @@
                             font-family: 'Roboto', serif;
                             font-size: 10px;
                             margin-top: 15px;
+                        }
+                    }
+                }
+                .little-fields {
+                    display: block;
+                    max-width: 325px;
+                }
+                .long-one {
+                    max-width: 100%;
+                    p {
+                        textarea {
+                            width: 325px;
                         }
                     }
                 }
